@@ -14,11 +14,16 @@
 
         </div>
     </div>
-
-    <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-distance="2">
+    <script>
+        function copyToClipboard(text){
+            window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
+        }
+        copyToClipboard('copied text');
+    </script>
+    <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-disabled='isFetching' infinite-scroll-distance="2">
         <ul class="memelist">
-            <li class="memeitem" ng-repeat="meme in memes">
-                <div class="bg" ng-click="IncrementMeme({{meme.id}})">
+            <li class="memeitem animate-repeat" ng-repeat="meme in memes">
+                <div class="bg" ng-click="IncrementMeme(meme.id);">
                     <div class="img-thumbnail image" style="background-image: url('{{meme.url}}');"></div>'
                 </div>
             </li>

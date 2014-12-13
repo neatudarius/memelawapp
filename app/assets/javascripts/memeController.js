@@ -5,6 +5,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 	$scope.tags = [];
 	$scope.memes = [];
 	$scope.query_input="";
+	$scope.isFetching = false;
 
 	$scope.LoadTags = function(start, count){
 		$.ajax({
@@ -22,15 +23,20 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 	}
 
 	$scope.LoadMemes = function (query){
+		$scope.isFetching = true;
+		console.log(1);
 		$.ajax({
 		    method: "GET",
 		    url: "/query.json?q="+query+"&s="+ $scope.start +"&c=" + $scope.count,
 		    success: function(data){
 			    	data.forEach(function(meme){
-						//$scope.addMeme(meme);
 						$scope.memes.push(meme);
 			    		$scope.start++;
 					});
+					//if response is null, then never try to disturb me again
+					//i mean request data
+					if(data.length>0)
+						$scope.isFetching = false;
 					$scope.$apply();
 				}
 		
@@ -46,7 +52,8 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 	$scope.IncrementMeme = function(mid){
 		$.ajax({
 		    method: "POST",
-		    url: "/incr?mid="+mid,
+		    url: "/incr",
+		    data: {'mid': mid},
 		    success: function(data){
 		    	console.log("Success");
 		    },
@@ -55,23 +62,6 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		    }
 		 });
 	}
-	/*
-	$scope.resetMeme = function(){
-		$(".memelist").empty();
-	}
-
-	$scope.addMeme = function(meme){
-		$(".memelist").append(
-				'<li class="memeitem" ng-click="IncrementMeme('+ meme.id +')">'
-		            +'<div class="bg">'
-			            +'<div class="img-thumbnail image" style="background-image: url(\''
-			            	+meme.url
-			            +'\');"></div>'
-		            +'</div>'
-            	+'</li>'
-		);
-	}
-	*/
 
 }]);
 
