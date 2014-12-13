@@ -78,10 +78,13 @@ class MemesController < ApplicationController
   def incr
     meme_id = params[:mid]
     if valid(meme_id) == 1
-      @q = meme_id
-    else
-      @q = "MOLOZ"
+      @meme = Meme.find_by({:id => meme_id.to_i} )
+      if @meme != nil
+        cnt = @meme.copy_count  + 1
+        @meme.update({:copy_count => cnt}) 
+      end
     end
+    
   end
 
   def favs
