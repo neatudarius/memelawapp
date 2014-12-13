@@ -1,25 +1,33 @@
-<div class="container">
+<div ng-app="memeApp" ng-controller="memeControl" class="container">
   <h1 align="center">Meme Law</h1>
   
 
   <div class="row row-fluid">
-    <input type="search" class="form-control" placeholder="search" />
+    <div class="col-xs-12">
+
+       
+        <div class="input-group">
+            <input type="text" class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button"  ng-click="LoadMemes('unu', 2, 5)">Go!</button>
+            </span>
+        </div><!-- /input-group -->
+
+    </div>
+    
   </div>
 
+
+  <ul ng-repeat="meme in currentMemes">
+    <li>{{meme.title}} - {{meme.url}} - {{meme.author}}</li>
+  </ul>
+  
   <ul class="results">
 
   </ul>
 
 <script>
-  $.ajax({
-    method: "GET",
-    url: "/query.json",
-    success: function(data){
-      data.forEach(function(meme){
-        $(".results").append("<li>" + meme.title + " " + meme.url + " " + meme.author + "</li>");
-      });
-    }
-  });
+    
 </script>
 
 </div>
