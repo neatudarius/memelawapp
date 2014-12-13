@@ -8,6 +8,37 @@ class MemesController < ApplicationController
   end
 
   def query
+    @memes = []
+
+    title = "meme1"
+    url = "www.meme1.ro"
+    author = "Darius"
+    tags = "funny crazy "
+    copy_count = req_count = likes_count = favs_count = 0
+    @meme = Meme.new({:title => title,
+                      :url => url,
+                      :author => author,
+                      :tags => tags,
+                      :copy_count => copy_count,
+                      :favs_count => favs_count,
+                      :req_count => req_count,
+                      :likes_count => likes_count})
+    @memes << @meme
+
+    title = "meme2"
+    url = "www.meme2.ro"
+    author = "Dumi"
+    tags = "boring sad"
+    copy_count = req_count = likes_count = favs_count = 0
+    @meme = Meme.new({:title => title,
+                      :url => url,
+                      :author => author,
+                      :tags => tags,
+                      :copy_count => copy_count,
+                      :favs_count => favs_count,
+                      :req_count => req_count,
+                      :likes_count => likes_count})
+    @memes << @meme
 
   end
 
