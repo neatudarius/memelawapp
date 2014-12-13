@@ -14,12 +14,7 @@
 
         </div>
     </div>
-    <script>
-        function copyToClipboard(text){
-            window.prompt("Copy to clipboard: Ctrl+C, Enter", text);
-        }
-        copyToClipboard('copied text');
-    </script>
+
     <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-disabled='isFetching' infinite-scroll-distance="2">
         <ul class="memelist">
             <li class="memeitem animate-repeat" ng-repeat="meme in memes">
