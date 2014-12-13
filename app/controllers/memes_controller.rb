@@ -49,9 +49,6 @@ class MemesController < ApplicationController
     k = 0
     cnt = 0
 
-    start = 2
-    count = 3
-
     tags_uniq.each do |tag|
       k = 0
       @words.each do |word|
