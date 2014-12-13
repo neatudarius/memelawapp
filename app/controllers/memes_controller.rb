@@ -9,8 +9,10 @@ class MemesController < ApplicationController
 
   def query
     @memes = []
+    start = query_paramas[:s].to_i
+    count = query_paramas[:c].to_i
 
-    title = "meme1"
+    title = start.to_s
     url = "www.meme1.ro"
     author = "Darius"
     tags = "funny crazy "
@@ -25,7 +27,7 @@ class MemesController < ApplicationController
                       :likes_count => likes_count})
     @memes << @meme
 
-    title = "meme2"
+    title = count.to_s
     url = "www.meme2.ro"
     author = "Dumi"
     tags = "boring sad"
