@@ -7,6 +7,19 @@ class MemesController < ApplicationController
     @memes = Meme.all
   end
 
+  def query
+    
+  end
+
+  def incr
+  end
+
+  def favs
+  end
+
+  def tag
+  end
+
   # GET /memes/1
   # GET /memes/1.json
   def show
