@@ -1,8 +1,10 @@
 memeApp.controller("memeControl", ["$scope", function($scope){
 
 	$scope.start = 1;
-	$scope.count = 20;
+	$scope.count = 10;
 	$scope.tags = [];
+	$scope.memes = [];
+	$scope.query_input="";
 
 	$scope.LoadTags = function(start, count){
 		$.ajax({
@@ -22,46 +24,54 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 	$scope.LoadMemes = function (query){
 		$.ajax({
 		    method: "GET",
-		    url: "/query.json?q="+query+"&s="+$scope.start +"&c=" + $scope.count,
+		    url: "/query.json?q="+query+"&s="+ $scope.start +"&c=" + $scope.count,
 		    success: function(data){
-		    	$scope.start += $scope.count;
-				data.forEach(function(meme){
-					$scope.addMeme(meme);
-				});
-		    }
-		});
+			    	data.forEach(function(meme){
+						//$scope.addMeme(meme);
+						$scope.memes.push(meme);
+			    		$scope.start++;
+					});
+					$scope.$apply();
+				}
+		
+			});
 	}
 
 	$scope.RemoveNLoadMemes = function (query){
 		$scope.start = 1;
-		$scope.resetMeme();
+		$scope.memes = [];
+		$scope.LoadMemes(query);
+	}
+
+	$scope.IncrementMeme = function(mid){
 		$.ajax({
-		    method: "GET",
-		    url: "/query.json?q="+query+"&s="+$scope.start +"&c=" + $scope.count,
+		    method: "POST",
+		    url: "/incr?mid="+mid,
 		    success: function(data){
-		    	$scope.start += $scope.count;
-				data.forEach(function(meme){
-					$scope.addMeme(meme);
-				});
+		    	console.log("Success");
+		    },
+		    error: function(data, err){
+		    	console.log(err);
 		    }
 		 });
 	}
-
+	/*
 	$scope.resetMeme = function(){
 		$(".memelist").empty();
 	}
 
 	$scope.addMeme = function(meme){
 		$(".memelist").append(
-			'<li class="memeitem">'
-            +'<div class="bg">'
-            +'<div class="img-thumbnail image" style="background-image: url(\''
-            +meme.url
-            +'\');"></div>'
-            +'</div>'
-            +'</li>'
+				'<li class="memeitem" ng-click="IncrementMeme('+ meme.id +')">'
+		            +'<div class="bg">'
+			            +'<div class="img-thumbnail image" style="background-image: url(\''
+			            	+meme.url
+			            +'\');"></div>'
+		            +'</div>'
+            	+'</li>'
 		);
 	}
+	*/
 
 }]);
 

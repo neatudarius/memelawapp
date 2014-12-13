@@ -1,3 +1,3 @@
 json.array!(@memes) do |meme|
-	json.extract! meme, :url, :title, :author, :tags
+	json.extract! meme, :id, :url, :title, :author, :tags
 end
