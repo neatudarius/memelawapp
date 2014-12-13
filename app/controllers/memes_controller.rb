@@ -11,7 +11,7 @@ class MemesController < ApplicationController
     @memes = []
     start = query_paramas[:s].to_i
     count = query_paramas[:c].to_i
-
+    query = query_paramas[:q].to_s 
     title = start.to_s
     url = "www.meme1.ro"
     author = "Darius"
