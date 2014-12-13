@@ -1,7 +1,7 @@
 memeApp.controller("memeControl", ["$scope", function($scope){
 
 	$scope.start = 1;
-	$scope.count = 5;
+	$scope.count = 20;
 	$scope.tags = [];
 
 	$scope.LoadTags = function(start, count){
