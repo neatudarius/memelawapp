@@ -31,19 +31,35 @@ class MemesController < ApplicationController
     tags_uniq = []
     tags_num = []
 
-
-    @memes.each do |meme|
-       t = meme.tags
-        if t != nil
-       words = ["2"]
-        else words = ["2", "3"]
-        end
-     end
-
      #puts words
 
-    @tags = [ { :tag => "funny", :popularity => 100} , { :tag => "crazy", :popularity => 1}]
-    @words = @memes.last.tags
+    @tags = []
+
+    @words = []
+    @memes.each do |meme|
+      t = meme.tags
+      if t!= nil
+        t.split(/\W+/).each do |str|
+          @words << str
+       end
+      end
+    end
+
+    tags_uniq = @words.sort.uniq
+    k = 0
+
+    tags_uniq.each do |tag|
+      k = 0
+      @words.each do |word|
+        if word == tag
+          k = k+1
+        end
+      end
+      tags_num << k 
+      @tags << {:tag => tag, :popularity => k }
+    end
+
+    @tags
 
   end
 
