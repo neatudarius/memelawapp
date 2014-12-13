@@ -25,7 +25,26 @@ class MemesController < ApplicationController
   end
 
   def tag
+    start = params[:s].to_i
+    count = params[:c].to_i
+    @memes = Meme.all
+    tags_uniq = []
+    tags_num = []
+
+
+    @memes.each do |meme|
+       t = meme.tags
+        if t != nil
+       words = ["2"]
+        else words = ["2", "3"]
+        end
+     end
+
+     #puts words
+
     @tags = [ { :tag => "funny", :popularity => 100} , { :tag => "crazy", :popularity => 1}]
+    @words = @memes.last.tags
+
   end
 
   # GET /memes/1
