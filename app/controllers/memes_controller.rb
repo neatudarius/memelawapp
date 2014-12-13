@@ -11,10 +11,57 @@ class MemesController < ApplicationController
     @memes = []
     start = params[:s].to_i
     count = params[:c].to_i
-    query = params[:q].to_s 
+    query = params[:q].to_s.split(/\W+/).sort.uniq
+
+    @memes_all = Meme.all
+    @memes = []
+
+    
+    @memes_all.each do |meme|
+      t = meme.tags
+      @words = t.split(/\W+/)
+      is_good = 0
+      query.each do |q|
+        @words.each do |word|
+          if q == word
+            is_good = is_good + 1
+          end
+        end
+      end 
+      if is_good > 0
+        @memes << {:meme => meme, :cnt => is_good }
+      end
+    end
+
+    @memes.sort! do |a,b|
+      case 
+      when a[:cnt].to_i < b[:cnt].to_i
+        1
+      when a[:cnt].to_i > b[:cnt].to_i
+        -1
+      else
+        a[:meme].likes_count.to_i <=> b[:meme].likes_count.to_i
+      end
+
+    end
+
+
+
+
+    @v = []
+    @memes.each do |m|
+      @v << m[:cnt]
+    end
+    @cnt = @v
+
+    @v = []
+    @memes.each do |m|
+      @v << m[:meme]
+    end
+    @memes = @v
+
 
   
-    @memes = Meme.all
 
   end
 
