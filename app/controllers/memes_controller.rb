@@ -47,6 +47,10 @@ class MemesController < ApplicationController
 
     tags_uniq = @words.sort.uniq
     k = 0
+    cnt = 0
+
+    start = 2
+    count = 3
 
     tags_uniq.each do |tag|
       k = 0
@@ -55,8 +59,11 @@ class MemesController < ApplicationController
           k = k+1
         end
       end
-      tags_num << k 
-      @tags << {:tag => tag, :popularity => k }
+      cnt = cnt + 1
+      if cnt >= start && cnt <= start + count - 1
+        tags_num << k
+        @tags << {:tag => tag, :popularity => k }
+      end
     end
 
     @tags
