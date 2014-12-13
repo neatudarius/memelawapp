@@ -11,28 +11,33 @@ class MemesController < ApplicationController
     @memes = []
     start = params[:s].to_i
     count = params[:c].to_i
-    query = params[:q].to_s.split(/\W+/).sort.uniq
+    query = params[:q]
 
     @memes_all = Meme.all
     @memes = []
 
-    
-    @memes_all.each do |meme|
-      t = meme.tags
-      @words = t.split(/\W+/)
-      is_good = 0
-      query.each do |q|
-        @words.each do |word|
-          if q == word
-            is_good = is_good + 1
+    if valid(query) == 1
+      query = params[:q].to_s.split(/\W+/).sort.uniq
+      @memes_all.each do |meme|
+        t = meme.tags
+        @words = t.split(/\W+/)
+        is_good = 0
+        query.each do |q|
+          @words.each do |word|
+            if q == word
+              is_good = is_good + 1
+            end
           end
+        end 
+        if is_good > 0
+          @memes << {:meme => meme, :cnt => is_good }
         end
-      end 
-      if is_good > 0
-        @memes << {:meme => meme, :cnt => is_good }
       end
-    end
-
+    else
+      @memes_all.each do |meme|
+        @memes << {:meme => meme, :cnt => 1 }
+      end
+    end  
     @memes.sort! do |a,b|
       case 
       when a[:cnt].to_i < b[:cnt].to_i
@@ -40,7 +45,7 @@ class MemesController < ApplicationController
       when a[:cnt].to_i > b[:cnt].to_i
         -1
       else
-        a[:meme].likes_count.to_i <=> b[:meme].likes_count.to_i
+        a[:meme].copy_count.to_i <=> b[:meme].copy_count.to_i
       end
 
     end
@@ -84,7 +89,6 @@ class MemesController < ApplicationController
         @meme.update({:copy_count => cnt}) 
       end
     end
-    
   end
 
   def favs
