@@ -9,9 +9,9 @@ class MemesController < ApplicationController
 
   def query
     @memes = []
-    start = query_params[:s].to_i
-    count = query_params[:c].to_i
-    query = query_params[:q].to_s 
+    start = params[:s].to_i
+    count = params[:c].to_i
+    query = params[:q].to_s 
     title = start.to_s
     url = "www.meme1.ro"
     author = "Darius"
