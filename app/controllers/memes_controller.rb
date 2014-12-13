@@ -18,7 +18,7 @@ class MemesController < ApplicationController
   end
 
   def tag
-    @tags = [ "funny", "crazy"]
+    @tags = [ { :tag => "funny", :popularity => 100} , { :tag => "crazy", :popularity => 1}]
   end
 
   # GET /memes/1
