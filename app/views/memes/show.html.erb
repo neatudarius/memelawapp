@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @meme.url %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @meme.author %>
+</p>
+
+<p>
+  <strong>Copy count:</strong>
+  <%= @meme.copy_count %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @meme.title %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @meme.tags %>
+</p>
+
+<p>
+  <strong>Likes count:</strong>
+  <%= @meme.likes_count %>
+</p>
+
+<p>
+  <strong>Favs count:</strong>
+  <%= @meme.favs_count %>
+</p>
+
+<p>
+  <strong>Req count:</strong>
+  <%= @meme.req_count %>
+</p>
+
+<%= link_to 'Edit', edit_meme_path(@meme) %> |
+<%= link_to 'Back', memes_path %>

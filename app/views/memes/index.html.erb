@@ -1,0 +1,39 @@
+<h1>Listing memes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Author</th>
+      <th>Copy count</th>
+      <th>Title</th>
+      <th>Tags</th>
+      <th>Likes count</th>
+      <th>Favs count</th>
+      <th>Req count</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @memes.each do |meme| %>
+      <tr>
+        <td><%= meme.url %></td>
+        <td><%= meme.author %></td>
+        <td><%= meme.copy_count %></td>
+        <td><%= meme.title %></td>
+        <td><%= meme.tags %></td>
+        <td><%= meme.likes_count %></td>
+        <td><%= meme.favs_count %></td>
+        <td><%= meme.req_count %></td>
+        <td><%= link_to 'Show', meme %></td>
+        <td><%= link_to 'Edit', edit_meme_path(meme) %></td>
+        <td><%= link_to 'Destroy', meme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meme', new_meme_path %>
