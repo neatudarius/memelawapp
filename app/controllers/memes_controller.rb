@@ -8,7 +8,7 @@ class MemesController < ApplicationController
   end
 
   def query
-    
+
   end
 
   def incr
@@ -18,6 +18,7 @@ class MemesController < ApplicationController
   end
 
   def tag
+    @tags = [ "funny", "crazy"]
   end
 
   # GET /memes/1
