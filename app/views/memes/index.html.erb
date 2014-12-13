@@ -17,7 +17,7 @@
   
     <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-distance="1">
         <ul class="memelist">
-            <li class="memeitem" ng-repeat="meme in currentMemes">
+            <li class="memeitem animate-repeat" ng-repeat="meme in currentMemes">
                 <div class="bg">
                     <div class="img-thumbnail image" style="background-image: url('{{meme.url}}');"></div>
                 </div>
