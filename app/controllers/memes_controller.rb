@@ -72,6 +72,10 @@ class MemesController < ApplicationController
   end
 
   def incr
+    @q = params[:q]
+    if @q == nil
+      @q = "MOLOZ"
+    end
   end
 
   def favs
@@ -87,6 +91,7 @@ class MemesController < ApplicationController
      #puts words
 
     @tags = []
+    @tags2 = []
 
     @words = []
     @memes.each do |meme|
@@ -109,14 +114,11 @@ class MemesController < ApplicationController
           k = k+1
         end
       end
-      cnt = cnt + 1
-      if cnt >= start && cnt <= start + count - 1
-        tags_num << k
-        @tags << {:tag => tag, :popularity => k }
-      end
+      tags_num << k
+      @tags2 << {:tag => tag, :popularity => k }
     end
 
-    @tags.sort! do |a,b|
+    @tags2.sort! do |a,b|
       case 
       when a[:popularity].to_i < b[:popularity].to_i
         1
@@ -125,7 +127,12 @@ class MemesController < ApplicationController
       else
         0
       end
+    end
 
+    cnt = start
+    while cnt <= start + count - 1
+      @tags << @tags2[cnt]
+      cnt = cnt + 1
     end
 
     @tags
