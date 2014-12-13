@@ -1,5 +1,5 @@
 <div ng-app="memeApp" ng-controller="memeControl" class="container">
-  <h1 align="center">Meme Law</h1>
+  <h1 align="center">Meme Law {{start}}</h1>
   
 
   <div class="row row-fluid">
@@ -8,14 +8,14 @@
         <div class="input-group">
             <input type="text" class="form-control" ng-model="query_input">
             <span class="input-group-btn">
-                <button class="btn btn-default" type="button"  ng-click="LoadMemes(query_input);">Go!</button>
+                <button class="btn btn-default" type="button"  ng-click="RemoveNLoadMemes(query_input)">Go!</button>
             </span>
         </div><!-- /input-group -->
 
     </div>
   </div>
-  {{start}}
-    <div class="memeWrap clear" infinite-scroll="RemoveNLoadMemes(query_input);" infinite-scroll-distance="1">
+  
+    <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-distance="1">
         <ul class="memelist">
             <li class="memeitem" ng-repeat="meme in currentMemes">
                 <div class="bg">
