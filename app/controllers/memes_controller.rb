@@ -89,6 +89,7 @@ class MemesController < ApplicationController
         @meme.update({:copy_count => cnt}) 
       end
     end
+    render :json => {:executed => "OK"}
   end
 
   def favs
