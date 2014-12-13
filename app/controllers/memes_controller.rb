@@ -12,36 +12,9 @@ class MemesController < ApplicationController
     start = params[:s].to_i
     count = params[:c].to_i
     query = params[:q].to_s 
-    title = start.to_s
-    url = "www.meme1.ro"
-    author = "Darius"
-    tags = "funny crazy "
-    copy_count = req_count = likes_count = favs_count = 0
-    @meme = Meme.new({:title => title,
-                      :url => url,
-                      :author => author,
-                      :tags => tags,
-                      :copy_count => copy_count,
-                      :favs_count => favs_count,
-                      :req_count => req_count,
-                      :likes_count => likes_count})
-    @memes << @meme
 
-    title = count.to_s
-    url = "www.meme2.ro"
-    author = "Dumi"
-    tags = "boring sad"
-    copy_count = req_count = likes_count = favs_count = 0
-    @meme = Meme.new({:title => title,
-                      :url => url,
-                      :author => author,
-                      :tags => tags,
-                      :copy_count => copy_count,
-                      :favs_count => favs_count,
-                      :req_count => req_count,
-                      :likes_count => likes_count})
+  
     @memes = Meme.all
-    @memes << @meme
 
   end
 
