@@ -1,1 +1,10 @@
 <p> query page</p>
+<%= @cnt %>
+<% @memes.each do |meme| %>
+	<p>
+	<%= meme.title %>
+	<%= meme.url %>
+	<%= meme.author %>
+	<%= meme.tags %>
+</p>
+<% end %>
