@@ -45,18 +45,24 @@ class MemesController < ApplicationController
 
     end
 
-
-
-
+    #in plus
     @v = []
+    cnt = 0
     @memes.each do |m|
-      @v << m[:cnt]
+      cnt = cnt + 1
+      if cnt >= start && cnt <= start + count - 1 
+        @v << m[:cnt]
+      end
     end
     @cnt = @v
-
+    #in plus 
     @v = []
+    cnt = 0
     @memes.each do |m|
-      @v << m[:meme]
+      cnt = cnt + 1
+      if cnt >= start && cnt <= start + count - 1 
+        @v << m[:meme]
+      end
     end
     @memes = @v
 
