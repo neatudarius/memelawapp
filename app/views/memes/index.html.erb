@@ -5,4 +5,21 @@
   <div class="row row-fluid">
     <input type="search" class="form-control" placeholder="search" />
   </div>
+
+  <ul class="results">
+
+  </ul>
+
+<script>
+  $.ajax({
+    method: "GET",
+    url: "/query.json",
+    success: function(data){
+      data.forEach(function(meme){
+        $(".results").append("<li>" + meme.title + " " + meme.url + " " + meme.author + "</li>");
+      });
+    }
+  });
+</script>
+
 </div>

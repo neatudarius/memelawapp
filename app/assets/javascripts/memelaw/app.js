@@ -1,0 +1,1 @@
+var memeApp = angular.module("memeApp", ['ngAnimate']);
