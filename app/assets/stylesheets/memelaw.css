@@ -1,0 +1,81 @@
+.memeWrap{
+	width:100%;
+	padding: 20px 0px 20px 0px;
+	text-align: center;
+}
+
+.memelist{
+	width:100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	/*margin: 0px auto;*/
+	text-align: center;
+	list-style-type: none;
+	font-size: 0;
+	letter-spacing: 0;
+	word-spacing: 0;
+}
+
+.memelist .memeitem{
+	width: 200px;
+	height: 150px;
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+	float: center;
+}
+
+.memeimtem .bg{
+	width:200px;
+	height:150px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+.memeitem .bg .image{
+	width:200px;
+	height:150px;
+	background-position:50% 0%;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+}
+
+.clear:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}.clear{display:inline-table;clear:both;}* html .clear{height:1%;}.clear{display:block;}
+
+
+/* ANIMATE STYLE */
+.example-animate-container {
+  background:white;
+  border:1px solid black;
+  list-style:none;
+  margin:0;
+  padding:0 10px;
+}
+
+.animate-repeat {
+  line-height:40px;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+  -webkit-transition:all linear 0.2s;
+  transition:all linear 0.2s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  width:90px;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:40px;

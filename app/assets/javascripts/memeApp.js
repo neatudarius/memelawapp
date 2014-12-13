@@ -1,1 +1,1 @@
-var memeApp = angular.module("memeApp", ['ngAnimate', 'ngResource']);
+var memeApp = angular.module("memeApp", ['ngAnimate', 'ngResource', 'infinite-scroll']);

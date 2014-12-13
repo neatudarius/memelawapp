@@ -4,30 +4,25 @@
 
   <div class="row row-fluid">
     <div class="col-xs-12">
-
        
         <div class="input-group">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" ng-model="query_input">
             <span class="input-group-btn">
-                <button class="btn btn-default" type="button"  ng-click="LoadMemes('unu', 2, 5)">Go!</button>
+                <button class="btn btn-default" type="button"  ng-click="LoadMemes(query_input);">Go!</button>
             </span>
         </div><!-- /input-group -->
 
     </div>
-    
   </div>
-
-
-  <ul ng-repeat="meme in currentMemes">
-    <li>{{meme.title}} - {{meme.url}} - {{meme.author}}</li>
-  </ul>
-  
-  <ul class="results">
-
-  </ul>
-
-<script>
-    
-</script>
+  {{start}}
+    <div class="memeWrap clear" infinite-scroll="RemoveNLoadMemes(query_input);" infinite-scroll-distance="1">
+        <ul class="memelist">
+            <li class="memeitem" ng-repeat="meme in currentMemes">
+                <div class="bg">
+                    <div class="img-thumbnail image" style="background-image: url('{{meme.url}}');"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
 
 </div>
