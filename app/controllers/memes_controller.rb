@@ -116,6 +116,18 @@ class MemesController < ApplicationController
       end
     end
 
+    @tags.sort! do |a,b|
+      case 
+      when a[:popularity].to_i < b[:popularity].to_i
+        1
+      when a[:popularity].to_i > b[:popularity].to_i
+        -1
+      else
+        0
+      end
+
+    end
+
     @tags
 
   end
