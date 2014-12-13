@@ -40,6 +40,7 @@ class MemesController < ApplicationController
                       :favs_count => favs_count,
                       :req_count => req_count,
                       :likes_count => likes_count})
+    @memes = Meme.all
     @memes << @meme
 
   end
