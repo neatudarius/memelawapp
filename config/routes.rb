@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   resources :memes
   root 'memes#index'
+
+  get '/query' => 'memes#query'
+  get '/incr' => 'memes#incr'
+  get '/favs' => 'memes#favs'
+  get '/tag' => 'memes#tag'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
