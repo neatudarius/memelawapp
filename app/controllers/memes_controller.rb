@@ -65,15 +65,21 @@ class MemesController < ApplicationController
       end
     end
     @memes = @v
+  end
 
-
-  
-
+  def valid(input)
+    if input != nil && input.to_s != ''
+      1
+    else
+      0
+    end
   end
 
   def incr
-    @q = params[:q]
-    if @q == nil
+    meme_id = params[:mid]
+    if valid(meme_id) == 1
+      @q = meme_id
+    else
       @q = "MOLOZ"
     end
   end
@@ -129,10 +135,14 @@ class MemesController < ApplicationController
       end
     end
 
-    cnt = start
-    while cnt <= start + count - 1
-      @tags << @tags2[cnt]
-      cnt = cnt + 1
+    if count > 0
+      cnt = start
+      while cnt <= start + count - 1
+        @tags << @tags2[cnt]
+        cnt = cnt + 1
+      end
+    else
+      @tags = @tags2
     end
 
     @tags
