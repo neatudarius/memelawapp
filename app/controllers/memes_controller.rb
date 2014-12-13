@@ -93,6 +93,7 @@ class MemesController < ApplicationController
   end
 
   def favs
+    
   end
 
   def tag
