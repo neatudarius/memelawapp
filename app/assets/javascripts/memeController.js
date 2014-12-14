@@ -60,14 +60,21 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		return result;
 	}
 
-	$currentlyExpanded = 
+	$scope.currentlyExpanded = [];
 	$scope.ExpandMeme = function(mid){
+		
+		$scope.currentlyExpanded.forEach(function(item){
+
+		});
 
 		$("#meme"+mid).collapse('show');
 		$("#memeitem"+mid).css({"height":"350px","width":"95%"});
+		$("#memeimage"+mid).css({"height":"250px","width":"200px"});
+		$("#memeitem"+mid).addClass("jumbotron");
 
+		$scope.currentlyExpanded.push(mid);
+		
 		$scope.IncrementMeme(mid);
-		//fuck me
 	}
 
 	$scope.IncrementMeme = function(mid){

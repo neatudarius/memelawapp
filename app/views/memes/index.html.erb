@@ -47,13 +47,20 @@
                     <a data-toggle="collapse" data-target="#meme{{meme.id}}" aria-expanded="true" aria-controls="meme{{memeid}}">
                     <a id="meme-collapse-{{meme.id}}">
                     -->
-                        <div class="bg" ng-click="ExpandMeme(meme.id);">
-                            <div class="image" style="background-image: url('{{meme.url}}');"></div>'
+                    <div>
+
+                        <div class="bg col-xs-4" ng-click="ExpandMeme(meme.id);">
+                            <div class="image" id="memeimage{{meme.id}}" style="background-image: url('{{meme.url}}');"></div>'
                         </div>
-                    <!--</a>-->
-                    <div id="meme{{meme.id}}" class="collapse" aria-expanded="true" style="height: 0px;">
-                        <h1>Please kill me! <strong>NOW</strong></h1>
+
+                        <div id="meme{{meme.id}}" class="collapse col-xs-7 pull-right" aria-expanded="true" style="height: 0px; text-align:left;">
+                            <h4>{{meme.title}} <em style="color:#777;">by {{meme.author}}</em></h4>
+                            
+                            <small>Tags: <em>{{meme.tags}}</em></small>
+                        </div>
                     </div>
+                    <!--</a>-->
+                    
                 </li>
             </ul>
         </div>
