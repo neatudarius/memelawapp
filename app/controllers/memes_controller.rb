@@ -117,7 +117,8 @@ class MemesController < ActionController::Base
       @meme = Meme.find_by({:id => meme_id.to_i} )
       if @meme != nil
         cnt = @meme.copy_count  + 1
-        @meme.update({:copy_count => cnt}) 
+        @meme.update({:copy_count => cnt})
+        @meme.save 
       end
     end
     render :json => {:executed => "OK"}
