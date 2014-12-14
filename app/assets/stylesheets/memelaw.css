@@ -1,12 +1,4 @@
-@font-face {
-    font-family: simplu;
-    src: url(/assets/simplu.ttf);
-}
-body
-	{
-		font-family: simplu;
-		
-	}
+
 .memeWrap{
 	width:100%;
 	padding: 20px 0px 20px 0px;

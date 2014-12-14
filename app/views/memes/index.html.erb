@@ -1,10 +1,10 @@
 <div ng-app="memeApp" ng-controller="memeControl" ng-init="RemoveNLoadMemes('');LoadTags(1,0);">
   
     <div class="container" >
-        <img src="/assets/3.png" width="50%" style="max-height:200px; display:block;margin-left:auto;margin-right:auto;"/>
+        <img src="/assets/3.png" width="50%" style="max-height:200px; margin:10px; display:block;margin-left:auto;margin-right:auto;"/>
     </div>
 
-    <nav id="memebar" class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav id="memebar" class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container container-fluid">
 
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -54,7 +54,9 @@
                         <div id="meme{{meme.id}}" class="collapse col-xs-7 pull-right" aria-expanded="true" style="height: 0px; text-align:left;">
                             <h2><strong>{{meme.title}} <br style="margin:0px;"/><em style="color:#777; font-size:50%;">by {{meme.author}}</em></strong></h2>
                             
-                            <p style="font-size:small;">Tags: <em >{{meme.tags}}</em></p>
+                            <p style="font-size:small;">Tags:
+
+                            <em >{{meme.tags}}</em></p>
 
                             <p>This meme was used <strong>{{meme.copy_count+1}}</strong> times</p>
 
