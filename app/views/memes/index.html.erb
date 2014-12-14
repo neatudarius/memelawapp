@@ -42,12 +42,12 @@
         </div>
         <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-disabled='isFetching' infinite-scroll-distance="2">
             <ul class="memelist">
-                <li class="memeitem animate-repeat" ng-repeat="meme in memes">
+                <li class="memeitem animate-repeat" id="memeitem{{meme.id}}" ng-repeat="meme in memes">
                     <!--
                     <a data-toggle="collapse" data-target="#meme{{meme.id}}" aria-expanded="true" aria-controls="meme{{memeid}}">
                     <a id="meme-collapse-{{meme.id}}">
                     -->
-                        <div class="bg" ng-click="ExpandMeme(meme.id, this);">
+                        <div class="bg" ng-click="ExpandMeme(meme.id);">
                             <div class="image" style="background-image: url('{{meme.url}}');"></div>'
                         </div>
                     <!--</a>-->

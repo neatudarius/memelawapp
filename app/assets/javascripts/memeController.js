@@ -60,30 +60,16 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		return result;
 	}
 
-	$scope.ExpandMeme = function(mid, caller){
+	$currentlyExpanded = 
+	$scope.ExpandMeme = function(mid){
 
-		$("#meme"+mid).collapse('hide');
-		console.log(caller);
+		$("#meme"+mid).collapse('show');
+		$("#memeitem"+mid).css({"height":"350px","width":"95%"});
 
+		$scope.IncrementMeme(mid);
 	}
 
 	$scope.IncrementMeme = function(mid){
-
-		var templ = '<div class="popover" role="tooltip" style="max-width:500px;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
-    	var myMeme = $scope.memeFromMid(mid);
-    	console.log(myMeme);
-        var content = '<img src="' + myMeme.url + '" width="450px">';
-        //$('#meme'+myMeme.id).popover({placement: 'bottom', content: content, html: true, template:templ});
-	    
-	    
-	               
-	    $('html').on('mouseup', function(e) {
-	        if(!$(e.target).closest('.popover').length) {
-	            $('.popover').each(function(){
-	                $(this.previousSibling).popover('hide');
-	            });
-	        }
-	    });
 
 		$.ajax({
 		    method: "POST",
