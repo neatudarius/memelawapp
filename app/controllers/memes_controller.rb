@@ -58,7 +58,6 @@ class MemesController < ActionController::Base
         query.each do |q|
           @words.each do |word|
               is_good += match(q,word)
-            
           end
         end 
         if is_good > 0
