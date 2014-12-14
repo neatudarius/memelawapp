@@ -22,7 +22,9 @@
             <div class="collapse navbar-collapse">
                 <form class="navbar-form navbar-right" role="search">
                     <div class="form-group">
+
                         <input type="text" class="form-control" ng-model="query_input" autofocus id="main_search" placeholder="Search Hype Meme">
+                        
                     </div>
                     <button type="submit" class="btn btn-default" ng-click="RemoveNLoadMemes(query_input)">Go for it!</button>
                 </form>
@@ -50,12 +52,45 @@
                         </div>
 
                         <div id="meme{{meme.id}}" class="collapse col-xs-7 pull-right" aria-expanded="true" style="height: 0px; text-align:left;">
-                            <h2>{{meme.title}} <em style="color:#777;">by {{meme.author}}</em></h2>
+                            <h2><strong>{{meme.title}} <br style="margin:0px;"/><em style="color:#777; font-size:50%;">by {{meme.author}}</em></strong></h2>
                             
-                            <p style="font-size:small;">Tags: <em>{{meme.tags}}</em></p>
+                            <p style="font-size:small;">Tags: <em >{{meme.tags}}</em></p>
 
                             <p>This meme was used <strong>{{meme.copy_count+1}}</strong> times</p>
 
+
+                            <div class="form-inline" role="MakeMyLifeHard">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" readonly="true" value="{{meme.url}}" onFocus="this.select()">
+                                        <div class="input-group-addon" style="max-width:25px; max-height:30px; overflow:hidden;">
+                                            <object style="margin:-7px;" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                                                    width="30"
+                                                    height="30"
+                                                    id="clippy" >
+                                            <param name="movie" value="/assets/clippy.swf"/>
+                                            <param name="allowScriptAccess" value="always" />
+                                            <param name="quality" value="high" />
+                                            <param name="scale" value="noscale" />
+                                            <param NAME="FlashVars" value="text={{meme.url}}">
+                                            <param name="bgcolor" value="#CCCCCC">
+                                            <embed src="/assets/clippy.swf"
+                                                   width="115"
+                                                   height="15"
+                                                   name="clippy"
+                                                   quality="high"
+                                                   allowScriptAccess="always"
+                                                   type="application/x-shockwave-flash"
+                                                   pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                                   FlashVars="text={{meme.url}}"
+                                                   bgcolor="#EEEEEE"
+                                            />
+                                            </object>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <!--</a>-->
