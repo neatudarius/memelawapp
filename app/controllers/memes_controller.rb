@@ -7,6 +7,19 @@ class MemesController < ActionController::Base
     @memes = Meme.all
   end
 
+
+  def match(a, b)
+    a = a.to_s.downcase
+    b = b.to_s.downcase
+    if a == b || (a.include?(b) ==true && (a.length - b.length) <= 3 )  || (b.include?(a)==true && (b.length - a.length) <= 3) 
+      result = 1
+    else
+      result = 0
+    end
+    result
+  end
+
+
   def query
     @memes = []
     start = params[:s].to_i
@@ -24,7 +37,7 @@ class MemesController < ActionController::Base
         is_good = 0
         query.each do |q|
           @words.each do |word|
-            if q == word
+            if match(q,word) == 1
               is_good = is_good + 1
             end
           end
