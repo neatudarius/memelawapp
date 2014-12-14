@@ -64,7 +64,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 	$scope.ExpandMeme = function(mid){
 		
 		$scope.currentlyExpanded.forEach(function(item){
-
+			$scope.hideCollapse(item);
 		});
 
 		$("#meme"+mid).collapse('show');
@@ -76,6 +76,13 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		
 		$scope.IncrementMeme(mid);
 	}
+
+	$scope.hideCollapse = function(mid){
+		$("#meme"+mid).collapse('hide');
+		$("#memeitem"+mid).css({"height":"200px","width":"150px"});
+		$("#memeimage"+mid).css({"height":"200px","width":"150px"});
+		$("#memeitem"+mid).removeClass("jumbotron");
+	};
 
 	$scope.IncrementMeme = function(mid){
 
