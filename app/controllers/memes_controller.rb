@@ -58,7 +58,7 @@ class MemesController < ActionController::Base
       when a[:cnt].to_i > b[:cnt].to_i
         -1
       else
-        a[:meme].copy_count.to_i <=> b[:meme].copy_count.to_i
+        b[:meme].copy_count.to_i <=> a[:meme].copy_count.to_i 
       end
 
     end
