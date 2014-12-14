@@ -50,9 +50,12 @@
                         </div>
 
                         <div id="meme{{meme.id}}" class="collapse col-xs-7 pull-right" aria-expanded="true" style="height: 0px; text-align:left;">
-                            <h4>{{meme.title}} <em style="color:#777;">by {{meme.author}}</em></h4>
+                            <h2>{{meme.title}} <em style="color:#777;">by {{meme.author}}</em></h2>
                             
-                            <small>Tags: <em>{{meme.tags}}</em></small>
+                            <p style="font-size:small;">Tags: <em>{{meme.tags}}</em></p>
+
+                            <p>This meme was used <strong>{{meme.copy_count+1}}</strong> times</p>
+
                         </div>
                     </div>
                     <!--</a>-->
