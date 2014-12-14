@@ -4,79 +4,56 @@
     <h1 align="center">Meme Law</h1>
 
     <nav id="memebar" class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container-fluid">
+        <div class="container container-fluid">
 
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Meme Law</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-            </ul>
-            </li>
-            </ul>
-            <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            </ul>
-            </li>
-            </ul>
+            <div class="collapse navbar-collapse">
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="query_input" autofocus id="main_search" placeholder="Search Hype Meme">
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-click="RemoveNLoadMemes(query_input)">Go for it!</button>
+                </form>
+        
             </div><!-- /.navbar-collapse -->
-            
-                <form class="input-group">
-                    <input type="text" id="main_search" class="form-control" ng-model="query_input" autofocus>
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit" ng-click="RemoveNLoadMemes(query_input)">Go!</button>
-                    </span>
-                </form><!-- /input-group -->
 
         </div>
     </nav>
 
     <div class="container">
         
+        <div class="jumbotron">HEADER
+            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo" aria-expanded="true" aria-controls="demo">
+                    simple collapsible
+            </button>
 
+            <div id="demo" class="collapse in">.hide me show me</div>
+        </div>
         <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-disabled='isFetching' infinite-scroll-distance="2">
             <ul class="memelist">
                 <li class="memeitem animate-repeat" ng-repeat="meme in memes">
-                    <a id="meme{{meme.id}}" rel="popover" data-content="" title="{{meme.title}}">
-                        <div class="bg" ng-click="IncrementMeme(meme.id);">
-                            <div class="img-thumbnail image" style="background-image: url('{{meme.url}}');"></div>'
+                    <!--
+                    <a data-toggle="collapse" data-target="#meme{{meme.id}}" aria-expanded="true" aria-controls="meme{{memeid}}">
+                    <a id="meme-collapse-{{meme.id}}">
+                    -->
+                        <div class="bg" ng-click="ExpandMeme(meme.id, this);">
+                            <div class="image" style="background-image: url('{{meme.url}}');"></div>'
                         </div>
-                    </a>
+                    <!--</a>-->
+                    <div id="meme{{meme.id}}" class="collapse" aria-expanded="true" style="height: 0px;">
+                        <h1>Please kill me! <strong>NOW</strong></h1>
+                    </div>
                 </li>
             </ul>
         </div>

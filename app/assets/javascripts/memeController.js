@@ -59,7 +59,14 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		});
 		return result;
 	}
-	console.log($scope.memeFromMid(1));
+
+	$scope.ExpandMeme = function(mid, caller){
+
+		$("#meme"+mid).collapse('hide');
+		console.log(caller);
+
+	}
+
 	$scope.IncrementMeme = function(mid){
 
 		var templ = '<div class="popover" role="tooltip" style="max-width:500px;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
