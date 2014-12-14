@@ -30,7 +30,6 @@ INSERT INTO memes VALUES(NULL,"http://www.memeurl.com/memes/genius.png","Radu",0
 INSERT INTO memes VALUES(NULL,"http://www.memeurl.com/memes/fap-guy.png","Radu",0,"Fap Guy","fap guy png lol wtf gross porn",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://www.memeurl.com/memes/like-a-sir.jpg","Radu",0,"Like a sir!","jpg jpeg like a sir gentleman arrogance elegance drink",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://www.memeurl.com/memes/lol-guy.jpg","Radu",0,"LOL","jpg jpeg lol guy troll trololo",0,0,0,NULL,NULL);
-INSERT INTO memes VALUES(NULL,"0","0",0,"2014-12-14 09:45:14.424724","2014-12-14 09:45:14.424724",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://www.memeurl.com/memes/no.jpg","Radu",0,"No!","jpg jpeg no guy nooo deny",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://www.memeurl.com/memes/not-bad.jpg","Radu",0,"Not bad!","jpg jpeg not bad obama barrack pretty cool",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://www.memeurl.com/memes/okay.jpg","Radu",0,"Okay","jpg jpeg okay guy fine sad really",0,0,0,NULL,NULL);
