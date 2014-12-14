@@ -61,11 +61,12 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 	}
 	console.log($scope.memeFromMid(1));
 	$scope.IncrementMeme = function(mid){
+
 		var templ = '<div class="popover" role="tooltip" style="max-width:500px;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
     	var myMeme = $scope.memeFromMid(mid);
     	console.log(myMeme);
         var content = '<img src="' + myMeme.url + '" width="450px">';
-        $('#meme'+myMeme.id).popover({placement: 'bottom', content: content, html: true, template:templ});
+        //$('#meme'+myMeme.id).popover({placement: 'bottom', content: content, html: true, template:templ});
 	    
 	    
 	               
@@ -79,8 +80,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 
 		$.ajax({
 		    method: "POST",
-		    url: "/incr",
-		    data: {'mid': mid},
+		    url: "/incr?mid=" + mid,
 		    success: function(data){
 		    	console.log("Success");
 		    },
