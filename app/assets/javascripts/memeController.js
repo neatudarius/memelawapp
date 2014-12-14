@@ -107,7 +107,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		$("#memeitem"+mid).css({"width":"150px"},1000, "easeOutQuad");
 
 		$("#memeitem"+mid).animate({"height":"200px"},1000, "easeOutQuad");
-		$("#memeimage"+mid).css({"height":"200px","width":"150px"});
+		$("#memeimage"+mid).css({"height":"150px","width":"150px"});
 			
 		setTimeout(function(){
 			$("#memeitem"+mid).removeClass("jumbotron");
