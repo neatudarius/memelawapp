@@ -128,7 +128,6 @@ INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/652/5001652.gififNm_460s
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/94/5001094.giffifNm_460sa_v1.gifpg/tumblr_mwz8e5JJwP1smcbm7o1_500.gif","Dumi",0,"Aham aham aham","aham aham aham",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/610/3575610.jpgifNm_460sa_v1.gifpg/tumblr_mwz8e5JJwP1smcbm7o1_500.gif","Dumi",0,"Dafuq is that","dafuq is that",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://www.themarysue.com/wp-content/uploads/2013/01/Jack-SparrowConfused.jpg1smcbm7o1_500.gif","Dumi",0,"Jack sparrow pe ganduri..","jack sparrow pe ganduri..",0,0,0,NULL,NULL);
-INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/629/5015629.gifoads/2013/01/Jack-SparrowConfused.jpg1smcbm7o1_500.gif","Dumi",0,"Not funny man...not funny","not funny man...not funny",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/853/5027853.gifoads/2013/01/Jack-SparrowConfused.jpg1smcbm7o1_500.gif","Dumi",0,"Tell me more cat","tell me more cat",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/103/5023103.jpgoads/2013/01/Jack-SparrowConfused.jpg1smcbm7o1_500.gif","Dumi",0,"My father was quite the adventurer","my father was quite the adventurer",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/487/5033487.gifoads/2013/01/Jack-SparrowConfused.jpg1smcbm7o1_500.gif","Dumi",0,"This guy","this guy",0,0,0,NULL,NULL);
@@ -136,10 +135,8 @@ INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/700/5045700.jpgoads/2013
 INSERT INTO memes VALUES(NULL,"http://i29.tinypic.com/23r8r5t.jpg00.jpgoads/2013/01/Jack-SparrowConfused.jpg1smcbm7o1_500.gif","Dumi",0,"U mad?","u mad?",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://img.pandawhale.com/105081-that-doesnt-make-any-sense-gif-Cvcl.gifd.jpg1smcbm7o1_500.gif","Dumi",0,"That doesn't make any sense","that doesn't make any sense",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/643/5079643.gifesnt-make-any-sense-gif-Cvcl.gifd.jpg1smcbm7o1_500.gif","Dumi",0,"Compliment","compliment",0,0,0,NULL,NULL);
-INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/306/5074306.jpgesnt-make-any-sense-gif-Cvcl.gifd.jpg1smcbm7o1_500.gif","Dumi",0,"That's not how it works you little shit","that's not how it works you little shit",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/537/5002537.gifesnt-make-any-sense-gif-Cvcl.gifd.jpg1smcbm7o1_500.gif","Dumi",0,"Reading","reading",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://static.fjcdn.com/comments/That+_71887712cb7bea439f6fc35f93bce038.jpgpg1smcbm7o1_500.gif","Dumi",0,"I like it, thor","i like it, thor",0,0,0,NULL,NULL);
-INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/884/5118884.gif1887712cb7bea439f6fc35f93bce038.jpgpg1smcbm7o1_500.gif","Dumi",0,"You are platinum mad","you are platinum mad",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://rs1ci.memecdn.com/174/5127174.gif1887712cb7bea439f6fc35f93bce038.jpgpg1smcbm7o1_500.gif","Dumi",0,"Sasuke moustache","sasuke moustache",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://media.tumblr.com/tumblr_lzgegpCqi41qc35m6.pnga439f6fc35f93bce038.jpgpg1smcbm7o1_500.gif","Dumi",0,"Dead eyes","dead eyes",0,0,0,NULL,NULL);
 INSERT INTO memes VALUES(NULL,"http://img-9gag-lol.9cache.com/photo/aPyBA0Q_460sa_v1.gif6fc35f93bce038.jpgpg1smcbm7o1_500.gif","Dumi",0,"Internal yelling","internal yelling",0,0,0,NULL,NULL);
