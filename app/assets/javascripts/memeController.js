@@ -24,7 +24,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 
 	$scope.LoadMemes = function (query){
 		$scope.isFetching = true;
-		
+
 		$.ajax({
 		    method: "GET",
 		    url: "/query.json?q="+query+"&s="+ $scope.start +"&c=" + $scope.count,
@@ -60,6 +60,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		return result;
 	}
 
+	$scope.AllTimeExpanded = [];
 	$scope.currentlyExpanded = [];
 	$scope.ExpandMeme = function(mid){
 
@@ -73,6 +74,12 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		$scope.currentlyExpanded = [];
 
 		if(shouldIExpand){
+
+			$('html, body').animate({
+		        scrollTop: $("#memeitem"+mid).offset().top
+		    }, 300);
+
+
 			$("#meme"+mid).collapse('show');
 			//$("#memeitem"+mid).css({"height":"350px","width":"95%"});
 			//$("#memeimage"+mid).css({"height":"250px","width":"200px"});
@@ -83,8 +90,19 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 			
 			$("#memeitem"+mid).addClass("jumbotron");
 
+			
+			var mayIIncrement = true;
+			$scope.AllTimeExpanded.forEach(function(item){
+				if(mid == item){
+					mayIIncrement = false;
+				}
+			});
+			if(mayIIncrement)
+			{
+				$scope.IncrementMeme(mid);
+				$scope.AllTimeExpanded.push(mid);
+			}
 			$scope.currentlyExpanded.push(mid);
-			$scope.IncrementMeme(mid);
 		}
 	}
 
@@ -99,7 +117,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		setTimeout(function(){
 			$("#memeitem"+mid).removeClass("jumbotron");
 
-		}, 100);
+		}, 200);
 		return 0;
 	};
 
@@ -107,13 +125,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 
 		$.ajax({
 		    method: "POST",
-		    url: "/incr?mid=" + mid,
-		    success: function(data){
-		    	console.log("Success");
-		    },
-		    error: function(data, err){
-		    	console.log(err);
-		    }
+		    url: "/incr?mid=" + mid
 		 });
 	}
 
