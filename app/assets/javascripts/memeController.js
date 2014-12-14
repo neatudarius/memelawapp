@@ -79,6 +79,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		        scrollTop: $("#memeitem"+mid).offset().top
 		    }, 300);
 
+
 			$("#meme"+mid).collapse('show');
 			//$("#memeitem"+mid).css({"height":"350px","width":"95%"});
 			//$("#memeimage"+mid).css({"height":"250px","width":"200px"});
