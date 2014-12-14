@@ -67,6 +67,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		$("#memeitem"+mid).css({"height":"350px","width":"95%"});
 
 		$scope.IncrementMeme(mid);
+		//fuck me
 	}
 
 	$scope.IncrementMeme = function(mid){
