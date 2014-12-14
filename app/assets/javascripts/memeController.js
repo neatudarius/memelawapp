@@ -1,7 +1,7 @@
 memeApp.controller("memeControl", ["$scope", function($scope){
 
 	$scope.start = 1;
-	$scope.count = 10;
+	$scope.count = 30;
 	$scope.tags = [];
 	$scope.memes = [];
 	$scope.query_input="";
@@ -24,7 +24,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 
 	$scope.LoadMemes = function (query){
 		$scope.isFetching = true;
-		console.log(1);
+		
 		$.ajax({
 		    method: "GET",
 		    url: "/query.json?q="+query+"&s="+ $scope.start +"&c=" + $scope.count,
@@ -62,26 +62,44 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 
 	$scope.currentlyExpanded = [];
 	$scope.ExpandMeme = function(mid){
-		
+
+		var shouldIExpand = true;
 		$scope.currentlyExpanded.forEach(function(item){
 			$scope.hideCollapse(item);
+			if(mid == item){
+				shouldIExpand = false;
+			}
 		});
+		$scope.currentlyExpanded = [];
 
-		$("#meme"+mid).collapse('show');
-		$("#memeitem"+mid).css({"height":"350px","width":"95%"});
-		$("#memeimage"+mid).css({"height":"250px","width":"200px"});
-		$("#memeitem"+mid).addClass("jumbotron");
+		if(shouldIExpand){
+			$("#meme"+mid).collapse('show');
+			//$("#memeitem"+mid).css({"height":"350px","width":"95%"});
+			//$("#memeimage"+mid).css({"height":"250px","width":"200px"});
+			$("#memeitem"+mid).css({"width":"95%"});
 
-		$scope.currentlyExpanded.push(mid);
-		
-		$scope.IncrementMeme(mid);
+			$("#memeitem"+mid).animate({"height":"350px"}, 350, "easeOutQuad");
+			$("#memeimage"+mid).animate({"height":"250px","width":"200px"}, 250);
+			
+			$("#memeitem"+mid).addClass("jumbotron");
+
+			$scope.currentlyExpanded.push(mid);
+			$scope.IncrementMeme(mid);
+		}
 	}
 
 	$scope.hideCollapse = function(mid){
 		$("#meme"+mid).collapse('hide');
-		$("#memeitem"+mid).css({"height":"200px","width":"150px"});
+
+		$("#memeitem"+mid).css({"width":"150px"},1000, "easeOutQuad");
+
+		$("#memeitem"+mid).animate({"height":"200px"},1000, "easeOutQuad");
 		$("#memeimage"+mid).css({"height":"200px","width":"150px"});
-		$("#memeitem"+mid).removeClass("jumbotron");
+			
+		setTimeout(function(){
+			$("#memeitem"+mid).removeClass("jumbotron");
+
+		}, 100);
 		return 0;
 	};
 

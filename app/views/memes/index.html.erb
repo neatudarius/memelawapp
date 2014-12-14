@@ -1,7 +1,7 @@
 <div ng-app="memeApp" ng-controller="memeControl" ng-init="RemoveNLoadMemes('');LoadTags(1,0);">
   
 
-    <h1 align="center">Meme Law</h1>
+        <img src="/assets/3.png" width="100%" />
 
     <nav id="memebar" class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container container-fluid">
@@ -31,15 +31,10 @@
         </div>
     </nav>
 
-    <div class="container">
-        
-        <div class="jumbotron">HEADER
-            <button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo" aria-expanded="true" aria-controls="demo">
-                    simple collapsible
-            </button>
 
-            <div id="demo" class="collapse in">.hide me show me</div>
-        </div>
+
+    <div class="container">
+
         <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-disabled='isFetching' infinite-scroll-distance="2">
             <ul class="memelist">
                 <li class="memeitem animate-repeat" id="memeitem{{meme.id}}" ng-repeat="meme in memes">
