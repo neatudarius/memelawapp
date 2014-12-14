@@ -49,7 +49,34 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		$scope.LoadMemes(query);
 	}
 
+	$scope.memeFromMid = function(mid){
+		var result = [];
+		angular.forEach($scope.memes,function(value, key) {
+  			if(value.id == mid){
+  				result = value;
+  			}
+  				
+		});
+		return result;
+	}
+	console.log($scope.memeFromMid(1));
 	$scope.IncrementMeme = function(mid){
+		var templ = '<div class="popover" role="tooltip" style="max-width:500px;"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>';
+    	var myMeme = $scope.memeFromMid(mid);
+    	console.log(myMeme);
+        var content = '<img src="' + myMeme.url + '" width="450px">';
+        $('#meme'+myMeme.id).popover({placement: 'bottom', content: content, html: true, template:templ});
+	    
+	    
+	               
+	    $('html').on('mouseup', function(e) {
+	        if(!$(e.target).closest('.popover').length) {
+	            $('.popover').each(function(){
+	                $(this.previousSibling).popover('hide');
+	            });
+	        }
+	    });
+
 		$.ajax({
 		    method: "POST",
 		    url: "/incr",
@@ -63,5 +90,6 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		 });
 	}
 
+    
 }]);
 

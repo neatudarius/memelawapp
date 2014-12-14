@@ -18,9 +18,11 @@
     <div class="memeWrap clear" infinite-scroll="LoadMemes(query_input)" infinite-scroll-disabled='isFetching' infinite-scroll-distance="2">
         <ul class="memelist">
             <li class="memeitem animate-repeat" ng-repeat="meme in memes">
-                <div class="bg" ng-click="IncrementMeme(meme.id);">
-                    <div class="img-thumbnail image" style="background-image: url('{{meme.url}}');"></div>'
-                </div>
+                <a id="meme{{meme.id}}" rel="popover" data-content="" title="{{meme.title}}">
+                    <div class="bg" ng-click="IncrementMeme(meme.id);">
+                        <div class="img-thumbnail image" style="background-image: url('{{meme.url}}');"></div>'
+                    </div>
+                </a>
             </li>
         </ul>
     </div>
