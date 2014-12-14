@@ -1,4 +1,4 @@
-class MemesController < ApplicationController
+class MemesController < ActionController::Base
   before_action :set_meme, only: [:show, :edit, :update, :destroy]
 
   # GET /memes
