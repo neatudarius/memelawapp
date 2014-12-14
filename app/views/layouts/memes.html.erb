@@ -11,5 +11,60 @@
 
 <%= yield %>
 
+
+<style>
+    .footer{
+        height:35px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        background-image: url(http://ipotesti.net16.net/img/footer-bar.png);
+        background-position: 50% 0;
+        background-repeat: repeat-x;
+    }
+    .copytext {
+    	color: white;
+    	font-weight: bolder;
+
+    }
+    .icon-arrow-up {
+    	display: inline-block;
+width: 14px;
+height: 14px;
+margin-top: 1px;
+line-height: 14px;
+vertical-align: text-top;
+background-image: url("../img/glyphicons-halflings.png");
+background-position: 14px 14px;
+background-repeat: no-repeat;
+    }
+    body {
+    
+    background-color: #ddd;
+}
+    </style>
+
+<div class="footer">
+        <div class="container">
+            <div style="text-align:center; margin-top:7px;" class="inline">
+                    <div>
+              		    <span class="copytext">Copyright © 2014</span>
+                        <i class="icon-arrow-up"></i><a href="#top"><strong class="copytext">Du-te sus</strong></a><i class="icon-arrow-up"></i>
+                        <script>
+                            $("a[href='#top']").click(function() {
+                                $("html, body").animate({ scrollTop: 0 }, "slow");
+                                return false;
+                            });
+                        </script>
+                    </div>
+                        
+            </div>
+        </div>
+	</div>
+
 </body>
+
+
 </html>
