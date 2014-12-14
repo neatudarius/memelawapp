@@ -82,6 +82,7 @@ memeApp.controller("memeControl", ["$scope", function($scope){
 		$("#memeitem"+mid).css({"height":"200px","width":"150px"});
 		$("#memeimage"+mid).css({"height":"200px","width":"150px"});
 		$("#memeitem"+mid).removeClass("jumbotron");
+		return 0;
 	};
 
 	$scope.IncrementMeme = function(mid){
