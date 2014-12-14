@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'memes#index'
 
   get '/query' => 'memes#query'
-  post '/incr' => 'memes#incr'
+  post '/incr/:mid' => 'memes#incr'
   get '/favs' => 'memes#favs'
   get '/tag' => 'memes#tag'
   # The priority is based upon order of creation: first created -> highest priority.
