@@ -1,28 +1,75 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Testing MemelawApp online
 
-Things you may want to cover:
+https://memelawapp-ddrprojects.c9.io/
 
-* Ruby version
+## Installing MemelawApp on Ubuntu
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  #1. Clone this repository.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
+  #2. Installing RVM on Ubuntu 12.04
+
+If you already have Ruby on Rails installed skip this step.
+
+**Find out whether you already have Ruby on your system**
+
+  which ruby
+
+If you already have Ruby on your system, uninstall it now.
+
+**Is your DPKG package database up to date?**
+
+
+  sudo apt-get update
+
+
+**We need a few packages before we begin:**
+
+  sudo apt-get install vim git-core curl autoconf bison build-essential libssl-dev libreadline-dev zlib1g zlib1g-dev sqlite3 libsqlite3-dev libtool libyaml-dev libxslt-dev libxml2-dev libgdbm-dev libncurses5-dev pkg-config libffi-dev nodejs
+
+
+**Install RVM (visit [the RVM site](https://rvm.io/rvm/install/) for reference, but do follow the instructions below):**
+
+  curl -L https://get.rvm.io | bash -s stable
+
+
+**Using your favorite text editor, append the line below to the end of your ~/.bashrc:**
+
+  [[ -s ~/.rvm/scripts/rvm ]] && . ~/.rvm/scripts/rvm
+
+**Close the terminal session you're in, open a new one.**
+
+**Install Ruby version 2.2.1:**
+
+  rvm install 2.2.1
+
+**Set your preference for version 2.2.1 of Ruby:**
+
+  rvm --default use 2.2.1
+
+**Install the needed gems**
+
+  sudo gem install --no-ri --no-rdoc bundler spring sinatra sqlite3 sinatra-activerecord test-unit bcrypt nokogiri json rails
+
+
+-----------------------------------------------------
+  #3. Run Rails server on local machine.
+
+**For the first use install Ruby gems.
+  
+  bundle install
+
+
+
+
+**Start Rails server from memelawapp directory.
+
+  rails server
+
+
+
+**That's it. You're done.**
